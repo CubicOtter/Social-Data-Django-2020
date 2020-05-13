@@ -34,7 +34,7 @@ SECRET_KEY = 'i^gyfuyz+zy66k%%hmy-kun(#n)2cj&)zry*+robiqh^x!x_&4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['socialdata-env.eba-ecbr7mmc.us-west-2.elasticbeanstalk.compytho','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'channels',
     'bokeh.server.django',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
