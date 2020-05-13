@@ -34,7 +34,7 @@ SECRET_KEY = 'i^gyfuyz+zy66k%%hmy-kun(#n)2cj&)zry*+robiqh^x!x_&4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sleepy-depths-64056.herokuapp.com']
+ALLOWED_HOSTS = ['france-covid.herokuapp.com','127.0.0.1']
 
 
 # Application definition
