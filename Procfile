@@ -1,1 +1,1 @@
-web:waitress-serve --listen=*:8000 django_embed.wsgi:application
+web: gunicorn django_embed.wsgi --log-file -
