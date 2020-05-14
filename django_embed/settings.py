@@ -34,7 +34,7 @@ SECRET_KEY = 'i^gyfuyz+zy66k%%hmy-kun(#n)2cj&)zry*+robiqh^x!x_&4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['france-covid.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['192.168.1.10','127.0.0.1','tardismoisson.synology.me','francecovid.i234.me','francecovid.synology.me']
 
 
 # Application definition
