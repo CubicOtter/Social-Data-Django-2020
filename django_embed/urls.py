@@ -29,6 +29,7 @@ from . import views
 bokeh_app_config = apps.get_app_config('bokeh.server.django')
 
 urlpatterns = [
+    path('', views.homepage),
     path("admin/", admin.site.urls),
     path("sea_surface/", views.sea_surface),
     path("my_sea_surface/", views.sea_surface_custom_uri),
@@ -37,10 +38,14 @@ urlpatterns = [
 base_path = settings.BASE_PATH
 
 bokeh_apps = [
-    autoload("sea_surface", views.sea_surface_handler),
-    document("sea_surface_with_template", views.sea_surface_handler_with_template),
-    document("bokeh_apps/sea_surface", base_path / "bokeh_apps" / "sea_surface.py"),
-    document("shape_viewer", views.shape_viewer_handler),
+    #autoload("sea_surface", views.sea_surface_handler),
+    #document("sea_surface_with_template", views.sea_surface_handler_with_template),
+    #autoload("bokeh_apps/sea_surface", base_path / "bokeh_apps" / "sea_surface.py"),
+    #document("shape_viewer", views.shape_viewer_handler),
+    autoload("bokeh_apps/map_air_quality", base_path / "bokeh_apps" / "map_air_quality.py"),
+    autoload("bokeh_apps/map_energy_consumption", base_path / "bokeh_apps" / "map_energy_consumption.py"),
+    autoload("bokeh_apps/map_airline_traffic", base_path / "bokeh_apps" / "map_airline_traffic.py"),
+    autoload("bokeh_apps/map_corona", base_path / "bokeh_apps" / "map_corona.py"),
 ]
 
 apps_path = Path(bokeh.__file__).parent.parent / "examples" / "app"

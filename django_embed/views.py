@@ -73,3 +73,10 @@ def sea_surface(request: HttpRequest) -> HttpResponse:
 def sea_surface_custom_uri(request: HttpRequest) -> HttpResponse:
     script = server_document(request._current_scheme_host + "/sea_surface")
     return render(request, "embed.html", dict(script=script))
+    
+def homepage(request: HttpRequest) -> HttpResponse:
+    script1 = server_document(request._current_scheme_host + "/bokeh_apps/map_energy_consumption")
+    script2 = server_document(request._current_scheme_host + "/bokeh_apps/map_airline_traffic")
+    script3 = server_document(request._current_scheme_host + "/bokeh_apps/map_corona")
+    script4 = server_document(request._current_scheme_host + "/bokeh_apps/map_air_quality")
+    return render(request, 'index.html', dict(script1=script1,script2=script2,script3=script3,script4=script4))

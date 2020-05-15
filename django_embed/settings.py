@@ -123,8 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [bokehjsdir()]
-STATIC_ROOT = join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = [bokehjsdir(),join(BASE_DIR, 'staticfiles/dist/'),join(BASE_DIR, 'staticfiles/scripts/'),join(BASE_DIR, 'staticfiles/src/')]
+STATIC_ROOT = join(BASE_DIR, 'static')
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 THEMES_DIR = join(MODULE_DIR, "themes")
