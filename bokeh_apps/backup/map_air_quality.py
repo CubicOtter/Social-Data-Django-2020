@@ -8,8 +8,6 @@ Created on Tue May 12 11:16:46 2020
 # usual libraries
 import numpy as np 
 import pandas as pd 
-import seaborn as sns
-sns.set(style='darkgrid', palette='muted', color_codes=True)
 import json
 import datetime
 
@@ -253,7 +251,7 @@ def prepare_air_quality_data(lat_by_department, lon_by_department, department, d
                              ignore_index=True)
     
     # Prepare datasets
-    df_air_2019, df_air_position_2019, df_air_by_date_city_2019 = preparation_air_dataset(df_air_2019)
+    df_air_2019, df_air_position_2019, df_air_by_date_city_2019 = preparation_air_dataset(df_air_2019, df_cities)
     
     # Filter on the cities and week which are in the corona dataset
     df_air_position_2019 = df_air_position_2019[df_air_position_2019["City"].isin(air_cities)]

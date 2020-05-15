@@ -46,6 +46,10 @@ bokeh_apps = [
     autoload("bokeh_apps/map_energy_consumption", base_path / "bokeh_apps" / "map_energy_consumption.py"),
     autoload("bokeh_apps/map_airline_traffic", base_path / "bokeh_apps" / "map_airline_traffic.py"),
     autoload("bokeh_apps/map_corona", base_path / "bokeh_apps" / "map_corona.py"),
+    autoload("bokeh_apps/lines_air_quality", base_path / "bokeh_apps" / "lines_air_quality.py"),
+    autoload("bokeh_apps/lines_air_traffic", base_path / "bokeh_apps" / "lines_air_traffic.py"),
+    autoload("bokeh_apps/lines_corona", base_path / "bokeh_apps" / "lines_corona.py"),
+    autoload("bokeh_apps/lines_energy_consumption", base_path / "bokeh_apps" / "lines_energy_consumption.py"),
 ]
 
 apps_path = Path(bokeh.__file__).parent.parent / "examples" / "app"

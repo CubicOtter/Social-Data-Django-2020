@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 12 09:27:44 2020
-
-@author: tangu
-"""
-
-""" Libraries """
 # usual libraries
 import numpy as np 
 import pandas as pd 
@@ -97,7 +89,7 @@ def get_department_data():
 """ Load hospital data and store data in dictionaries"""
 def prepare_hospital_data(lat_by_department, lon_by_department, department):
     # Load data
-    df_hospital = pd.read_csv("data/donnees-hospitalieres-covid19-2020-05-13-19h00.csv", sep=";")
+    df_hospital = pd.read_csv("data\donnees-hospitalieres-covid19-2020.csv", sep=";")
     
     #Let's change columns name to make them more meaningful
     df_hospital.rename(columns={"dep":"department",
@@ -495,10 +487,11 @@ button_animation.visible = False # Initially the slider is not visible
 
 # Set up layouts and add to document
 inputs = widgetbox(title_button_choice, button_choice, title_button_mode, button_mode, date_slider, button_animation)
-layout = row(p, inputs)
+layout_doc = layout(p, inputs, sizing_mode="scale_width")
+     
 
 # Handle rendering in HTML
-curdoc().add_root(layout)
+curdoc().add_root(layout_doc)
 curdoc().title = title
 
 

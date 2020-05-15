@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 12 10:56:18 2020
-
-@author: tangu
-"""
-
 # usual libraries
 import numpy as np 
 import pandas as pd 
@@ -551,10 +544,10 @@ title_lockdown = PreText(text= "Lockdown begins in France on March 16", style={'
 
 # Set up layouts and add to document
 inputs = widgetbox(title_button_choice, button_choice, slider_explanation, date_slider, button_animation, title_lockdown)
-layout = row(p, inputs)
+layout_doc = layout(p, inputs, sizing_mode="scale_width")
 
 # Render in HTML
-curdoc().add_root(layout)
+curdoc().add_root(layout_doc)
 curdoc().title = title
  
     

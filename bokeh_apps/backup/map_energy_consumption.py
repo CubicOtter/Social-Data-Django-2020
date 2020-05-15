@@ -9,8 +9,6 @@ Created on Tue May 12 10:24:18 2020
 # usual libraries
 import numpy as np 
 import pandas as pd 
-import seaborn as sns
-sns.set(style='darkgrid', palette='muted', color_codes=True)
 import json
 import datetime
 

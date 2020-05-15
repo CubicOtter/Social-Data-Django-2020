@@ -9,8 +9,6 @@ Created on Tue May 12 09:27:44 2020
 # usual libraries
 import numpy as np 
 import pandas as pd 
-import seaborn as sns
-sns.set(style='darkgrid', palette='muted', color_codes=True)
 import json
 import datetime
 
@@ -99,7 +97,7 @@ def get_department_data():
 """ Load hospital data and store data in dictionaries"""
 def prepare_hospital_data(lat_by_department, lon_by_department, department):
     # Load data
-    df_hospital = pd.read_csv("data\donnees-hospitalieres-covid19-2020-05-12-19h00.csv", sep=";")
+    df_hospital = pd.read_csv("data\donnees-hospitalieres-covid19-2020-05-13-19h00.csv", sep=";")
     
     #Let's change columns name to make them more meaningful
     df_hospital.rename(columns={"dep":"department",
@@ -322,7 +320,6 @@ def prepare_hospital_data(lat_by_department, lon_by_department, department):
 """ -------------------- General variables for plot --------------------  """   
 title = "Hospitalized since the beginning of Covid-19"
 lat_by_department, lon_by_department, name_department, department = get_department_data() 
-print(name_department)
 data_rate, data_min_max, hospital_dates_str  = prepare_hospital_data(lat_by_department, lon_by_department, department)
 
 # Chosen color palette
