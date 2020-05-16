@@ -27,6 +27,16 @@
 						
 							<a class="nav-link collapsed" href="#" aria-expanded="true"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Introduction
+                            </a>
+							<nav class="sb-sidenav-menu-nested nav">
+							<a class="nav-link" href="#" onclick="toggleDIV1(0)">Overview</a>
+							<a class="nav-link" target="_blank" href="https://youtu.be/lGcO04c2v78">Video</a>
+							<a class="nav-link" target="_blank" href="https://github.com/CubicOtter/Social-Data-Django-2020/blob/master/Explainer%20notebook_V4.ipynb">Explainer notebook</a>
+							</nav>
+						
+							<a class="nav-link collapsed" href="#" aria-expanded="true"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Datasets
                             </a>
 							<nav class="sb-sidenav-menu-nested nav">
@@ -50,10 +60,6 @@
 								</nav>
                             </div>
 							
-							<a class="nav-link collapsed" target="_blank" href="https://github.com/CubicOtter/Social-Data-Django-2020/blob/master/Explainer%20notebook_V4.ipynb"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Explainer notebook
-                                </a>
 							<!--
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="index.html"
@@ -110,7 +116,7 @@
                     <div class="container-fluid">
                         <h1 class="mt-4">Dashboard</h1>
 						
-                        <ol class="breadcrumb mb-4">
+                        <ol class="breadcrumb mb-4" id="details">
                             <li class="breadcrumb-item active">Dataset evolution before/after lockdown - Hover the data for details</li>
                         </ol>
 						<!--
@@ -174,6 +180,15 @@
                                 </div>
                             </div>
                         </div>-->
+						<div class="card mb-4" id="DIV0">
+							<div class="card-header"><i class="fas fa-chart-area mr-1"></i>Project presentation</div>
+                            <div class="card-body">This website aims at giving an overview of how the <code>CoViD19 pandemic</code> affected France.
+							<br></br>On the 17th of March, an unprecedented <code>complete lockdown</code> was set in the country.
+							<br></br>All of the society has seen consequences of the resulting sanitary, economic and social crysis: through a geographical and temporal exploration of a few selected datasets,
+							we want to provide an overview of some of these consequences.
+							<br></br>Feel free to explore the visualizations provided, to discover the more or less expected results of the pandemic on the country, with the most recent data.
+							</div>
+                        </div>
 						
 						<div class="row">
 							<div class="col-xl-6" id="DIV1">
@@ -250,27 +265,49 @@
             </div>
         </div>
 		<script>
-		toggleDIV1(1);
+		toggleDIV1(0);
 		
 		function toggleDIV1(num) {
-			var divname = "DIV" + num.toString();
-			var divname2 = "DIV" + (num + 4).toString();
-			var x1 = document.getElementById(divname);
-			var x2 = document.getElementById(divname2);
 			
-			x1.style.display = "block";
-			x2.style.display = "block";
+			var det = document.getElementById('details');
+			var div0 = document.getElementById('DIV0');
 			
-			for ( var j = 0; j < 3; j++ ) {
-				console.log(((num + j)%4 + 1).toString());
-				console.log(((num + j)%4 + 5).toString());
-				var x3 = document.getElementById("DIV" + ((num + j)%4 + 1).toString());
-				var x4 = document.getElementById("DIV" + ((num + j)%4 + 5).toString());
-				x3.style.display = "none";
-				x4.style.display = "none";
+			if (num == 0) {
+			
+				div0.style.display = "block";
+				det.style.display = "none";
+				
+				for ( var j = 0; j < 4; j++ ) {
+					console.log(((num + j)%4 + 1).toString());
+					console.log(((num + j)%4 + 5).toString());
+					var x3 = document.getElementById("DIV" + ((num + j)%4 + 1).toString());
+					var x4 = document.getElementById("DIV" + ((num + j)%4 + 5).toString());
+					x3.style.display = "none";
+					x4.style.display = "none";
+				}
+				
+			} else {
+		
+				var divname = "DIV" + num.toString();
+				var divname2 = "DIV" + (num + 4).toString();
+				var x1 = document.getElementById(divname);
+				var x2 = document.getElementById(divname2);
+				
+				x1.style.display = "block";
+				x2.style.display = "block";
+				det.style.display = "block";
+				div0.style.display = "none";
+				
+				for ( var j = 0; j < 3; j++ ) {
+					console.log(((num + j)%4 + 1).toString());
+					console.log(((num + j)%4 + 5).toString());
+					var x3 = document.getElementById("DIV" + ((num + j)%4 + 1).toString());
+					var x4 = document.getElementById("DIV" + ((num + j)%4 + 5).toString());
+					x3.style.display = "none";
+					x4.style.display = "none";
+				}
+			
 			}
-			
-			 
 		}
 		</script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
