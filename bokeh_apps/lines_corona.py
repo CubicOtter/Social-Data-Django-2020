@@ -76,8 +76,8 @@ df_hospital_France = df_hospital_groupby.sum(level=0)
 
 # Rename columns
 df_hospital_France .rename(columns={"hospitalized":"Hospitalized",
-                           "intensive_care":"Intensive care",   
-                           "death":"Cumulated deceased "}, 
+                           "intensive_care":"Intensive_care",   
+                           "death":"Cumulated_deceased"}, 
                    inplace=True)
 
 

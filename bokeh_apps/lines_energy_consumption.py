@@ -95,26 +95,24 @@ df_consumption = pd.merge(df_energy2019['Consommation (MW)'], df_energy2020['gen
                                how='inner', on='date')
 
 # Rename such that all datasets have same features (otherwise it doesn't work on bokeh)
-df_consumption.rename(columns={'Consommation (MW)': '2019 (MW)', 
-                               'general_consumption': '2020 (MW)'},
+df_consumption.rename(columns={'Consommation (MW)': '2019_MW', 
+                               'general_consumption': '2020_MW'},
                       inplace=True)
 
 df_thermic = pd.merge(df_energy2019['Thermique (MW)'], df_energy2020['thermal_power'], 
                                how='inner', on='date')
-df_thermic.rename(columns={'Thermique (MW)': '2019 (MW)', 
-                               'thermal_power': '2020 (MW)'},
+df_thermic.rename(columns={'Thermique (MW)': '2019_MW', 
+                               'thermal_power': '2020_MW'},
                       inplace=True)
 
 df_nuclear = pd.merge(df_energy2019['Nucléaire (MW)'], df_energy2020['nuclear_power'], 
                                how='inner', on='date')
-df_nuclear.rename(columns={'Nucléaire (MW)': '2019 (MW)', 
-                               'nuclear_power': '2020 (MW)'},
+df_nuclear.rename(columns={'Nucléaire (MW)': '2019_MW', 
+                               'nuclear_power': '2020_MW'},
                       inplace=True)
 
 df_thermic.head(2)
 
-
-# In[10]:
 
 
 """ Initialization"""
@@ -128,12 +126,10 @@ df_thermic['integer'] = [i for i in range(len(df_thermic))]
 df_nuclear['integer'] = [i for i in range(len(df_nuclear))]
 
 
-# In[21]:
-
 
 lines_function.plot_bokeh_multi_lines([df_consumption, df_thermic, df_nuclear],
                        "French energy consumption and production", 
                        dates_str=energy_dates_str, 
-                       label_modes=['Global consumption','Thermic production','Nuclear production']
+                       label_modes=['General consumption','Thermal power','Nuclear power']
                       )
 
